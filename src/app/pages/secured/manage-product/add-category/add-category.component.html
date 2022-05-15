@@ -1,0 +1,52 @@
+<div class="headding">
+  <h3 class="btnbg darkblue rounded-pill px-4 py-3 text-uppercase font-weight-bold"
+      style="text-align: center;">Category</h3>
+</div>
+<mat-divider>
+  <hr>
+</mat-divider><br>
+
+<div class="add-cat">
+  <div class="col-sm-8">
+    <div class="card">
+      <div class="card-header bg-light">
+        <!-- <h2 class="bg-light darkblue rounded-pill px-4 py-3 text-uppercase font-weight-bold">CURRENT AUCTIONS</h2> -->
+
+        <h5 class="bg-light px-2 py-1 text-uppercase font-weight-bold ">Add Category</h5>
+      </div>
+      <div class="card-body">
+        <form ngNativeValidate (submit)="addCategory()">
+          <div class="digital-add needs-validation">
+            <div class="form-group">
+              <label for="validationCustom05" class="col-form-label pt-0"><span>*</span> Category Name</label>
+              <input class="form-control" id="validationCustom05" type="text" name="categoryName"
+                     [(ngModel)]="categoryName" required>
+            </div>
+            <div class="example-container">
+              <label class="col-form-label"><span>*</span> Category Description </label><br>
+              <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput name="categoryDescription" [(ngModel)]="categoryDescription" required></textarea>
+              </mat-form-field>
+            </div>
+            <div class="form-group mb-0">
+              <div class="product-buttons text-center">
+                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="reset" class="btn btn-light">Discard</button>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <li class="alert alert-success" *ngIf="successMessage"> {{successMessage}}</li>
+              <li class="alert alert-danger" *ngIf="errorMessage"> {{errorMessage}}</li>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+

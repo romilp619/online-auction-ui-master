@@ -1,0 +1,103 @@
+<div class="top-padding"></div>
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>MY <b>POSTED PRODUCTS</b></h2>
+        </div>
+        <div class="col-sm-8">
+          <button name="refresh" class="btn btn-primary" (click)="refreshPage()">Refresh</button>
+        </div>
+      </div>
+    </div>
+    <table mat-table [dataSource]="dataSource"
+           class="mat-elevation-z8 table table-striped table-responsive-md btn-table">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="productId">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;"
+            class="font-weight-bold"> Product Id
+        </th>
+        <!--<td mat-cell *matCellDef="let element"><img src="{{element.productId}}" class="" alt="Avatar"
+                                                    style="width: 75px; height: 40px;"></td>-->
+        <td mat-cell *matCellDef="let element" style="font-size: 16px; color:black;"><b>{{element.productId}}</b></td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;" class="font-weight-bold"> Product
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 16px; color:black;"><b>{{element.productName}}</b></td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="categoryName">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;" class="font-weight-bold"> Category
+        </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 16px; color:black;"> {{element.categoryName}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="productStartDateTime">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;" class="font-weight-bold"> Start Date
+          Time
+        </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 16px; color:black;"> {{element.productStartDateTime}}
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="productEndDateTime">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;" class="font-weight-bold"> End Date
+          Time
+        </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 16px; color:black;"> {{element.productEndDateTime}}
+        </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="productStatus">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;" class="font-weight-bold"> Status
+        </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 16px; color:black;"> {{element.productStatus}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="basePrice">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;" class="font-weight-bold"> Base
+          Amount
+        </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 16px; color:black;"><b> ₹ {{element.basePrice}} </b>
+        </td>
+      </ng-container>
+
+      <!-- View Details Column -->
+      <ng-container matColumnDef="viewDetails">
+        <th mat-header-cell *matHeaderCellDef style="font-size: 16px; color:black;" class="font-weight-bold">
+
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <a [routerLink]="['/product-listing/product-detail',element.productId]" routerLinkActive="router-link-active"
+             title="View Details" data-toggle="tooltip">
+            <button class="btn btn-primary">View</button>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <br>
+    <div class="clearfix">
+      <div class="hint-text">Total My Posted Products: <b>{{totalUserPostedProducts}}</b></div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <mat-form-field appearance="outline" class="full-width">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 class="modal-title">Welcome! Bid Now</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="form-group">
+              <div class="center-align">
+              <button mat-raised-button type="button">Pay Base Price</button></div><br>
+              <label><h5>Enter Your Bidding Price</h5></label> &nbsp;
+                <mat-form-field appearance="fill">
+                  <span matPrefix>₹&nbsp;</span>
+                  <mat-label>Bid Price</mat-label>
+                  <input matInput type="number" class="example-right-align">
+                  <span matSuffix class="amount">.00</span>
+                  <mat-hint>Hint</mat-hint>
+                </mat-form-field>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button mat-button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;
+          <button mat-button type="button" class="btn btn-primary">Bid Now</button>
+        </div>
+      </div>
+    </mat-form-field>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="top-padding"></div>
+<div class="logout">
+  <div class="alert alert-success" role="alert">
+    <ng-container *ngIf="isLoggedOut; else elseTemplate">
+      <strong>{{message}}</strong>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <strong>{{message}}</strong>
+    </ng-template>
+    <br /><br />
+    <div class="example-button-row">
+      <button mat-stroked-button color="primary" class="bg-grey" (click)="redirectToHome()"> Go to Home</button>
+      <button mat-stroked-button color="primary" class="bg-grey" (click)="redirectToLogin()"> Go to Login</button>
+    </div>
+  </div>
+</div>

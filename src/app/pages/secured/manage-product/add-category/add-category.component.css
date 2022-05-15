@@ -1,0 +1,91 @@
+
+  .font-size{
+    font-size: 15px;
+  }
+
+  hr{
+    width: 100%;
+    size: 5px;
+  }
+  .darkblue{
+    color: darkblue;
+    font-style: initial;
+  }
+
+  .headding{
+    padding-top: 3%;
+    padding-bottom: 7%;
+  }
+  .btnbg{
+    background-color: rgb(150, 143, 143);
+  }
+
+  .add-cat{
+    padding-left: 25%;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.post-product-form{
+  padding: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+hr{
+  color: black;
+  border-color: black;
+  border: 2;
+  padding: 7px;
+}
+
+.product-content{
+  font-size: 16px;
+  color: black;
+  margin-top: 3%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.img-center{
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
+.img-con-padding{
+  padding-left: 10%;
+}
+
+.top-padding{
+  padding-top: 115px;
+}

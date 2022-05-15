@@ -1,0 +1,124 @@
+
+.top-padding{
+  padding-top: 123px;
+}
+.bg{
+  /* background-color: rgb(243, 239, 239); */
+}
+.example-card {
+    max-width: 400px;
+    border: 1px solid #701811;
+  }
+.card-color{
+  background-color: rgba(121, 85, 72, 0.7);
+}
+  .example-header-image {
+    /* background-image: url('../../../../assets/old_piece.jpg'); */
+
+    background-size: cover;
+  }
+
+
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .example-container > * {
+    width: 100%;
+  }
+
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 8px;
+  }
+
+
+
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+
+  }
+
+  .example-margin {
+    margin: 0 10px;
+  }
+.tab{
+  padding-left: 55%;
+}
+
+.mg{
+  margin-left: 1%;
+  margin-top: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+
+.amount{
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+}
+.full-width{
+  width: 100%;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+.card{
+  padding: 2%;
+}
+.mat-divider{
+  color:black;
+}
+.center-align{
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+
+.element {
+  background-position: 100%;
+  position: -ms-page;
+}
+.btn{
+  margin-bottom: 5%;
+
+}
+.image-center{
+  width: 312px;
+  max-width: 312px;
+   height: 200px;
+   vertical-align: middle;
+}
+.set{
+  width: fit-content;
+  height: fit-content;
+}
+.in-size:hover{
+  font-size: 30px;
+}
+
+.center{
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}

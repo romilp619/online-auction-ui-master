@@ -1,0 +1,205 @@
+<div class="top-padding">
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-3 element ">
+      <mat-card class="example-card mg-bottom-15px">
+        <mat-card-header class="bg-light p-2 font-weight-bold">
+          <!--<div mat-card-avatar class="example-header-image"></div>-->
+          <mat-card-title>Product Category</mat-card-title>
+          <!--<mat-card-subtitle>Select product category</mat-card-subtitle>-->
+        </mat-card-header>
+        <mat-card-content>
+          <mat-selection-list #list [(ngModel)]="selectedCategories" (ngModelChange)="onNgModelChange($event)">
+            <mat-list-option *ngFor="let cat of categories" [value]="cat.id">
+              {{cat.name}}
+            </mat-list-option>
+          </mat-selection-list>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="bg-light center p-2 font-weight-bold">
+            <button class=" btn btn-unique rounded-pill" algin="right" mat-raised-button (click)="getProducts()">Apply</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-unique rounded-pill" algin="right" mat-raised-button (click)="resetCategory()">Reset</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
+
+    <div class="col-9">
+      <!-- <div class="card-deck">
+         <div class="card">
+           <img class="card-img-top" src="holder.js/100x180/" alt="">
+           <div class="card-body">
+             <h6 class="card-title">Title</h6>
+             <p class="card-text">Text</p>
+           </div>
+         </div>
+         <div class="card">
+           <img class="card-img-top" src="holder.js/100x180/" alt="">
+           <div class="card-body">
+             <h6 class="card-title">Title</h6>
+             <p class="card-text">Text</p>
+           </div>
+         </div>
+         <div class="card">
+           <img class="card-img-top" src="holder.js/100x180/" alt="">
+           <div class="card-body">
+             <h6 class="card-title">Title</h6>
+             <p class="card-text">Text</p>
+           </div>
+         </div>
+         <div class="card">
+           <img class="card-img-top" src="holder.js/100x180/" alt="">
+           <div class="card-body">
+             <h6 class="card-title">Title</h6>
+             <p class="card-text">Text</p>
+           </div>
+         </div>
+       </div>-->
+
+      <!-- <mat-grid-list cols="3">
+           <mat-grid-tile class="bg-light"
+               *ngFor="let tile of tiles"
+               >
+             <mat-card class="example-card">
+                 <mat-card-header>
+                   <div mat-card-avatar class="example-header-image"></div>
+                   <mat-card-title>Shiba Inu</mat-card-title>
+                   <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                 </mat-card-header>
+                 <img mat-card-lg-image>
+                 <mat-card-content>
+                     <p>
+                         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                         bred for hunting.
+                       </p>
+                 </mat-card-content>
+                 <mat-card-actions>
+                   <button mat-button>LIKE</button>
+                   <button mat-button>SHARE</button>
+                 </mat-card-actions>
+               </mat-card>
+           </mat-grid-tile>
+         </mat-grid-list>
+ -->
+      <div class="row pd-5px">
+        <span class="mg-left-15px mg-top-15px"><h4><b>&nbsp;&nbsp;Auction product listing</b></h4></span>
+      </div>
+      <div class="row" *ngIf="products">
+        <div class="col-sm-6 pd-10px">
+          <section class="example-section">
+            <mat-checkbox name="isLive" [(ngModel)]="isLive" class="example-margin" (click)="getProducts()">Live Auction</mat-checkbox>
+            <mat-checkbox name="isUpcoming" [(ngModel)]="isUpcoming" class="example-margin" (click)="getProducts()">Upcoming Auction</mat-checkbox>
+            <mat-checkbox name="isExpired" [(ngModel)]="isExpired" class="example-margin" (change)="getProducts()">Past Auction</mat-checkbox>
+          </section>
+        </div>
+        <div class="col-sm-6 pd-5px">
+          <mat-paginator class="bg-light"
+                         [length]="pagination.totalElements"
+                         [pageIndex]="0"
+                         [pageSize]="5"
+                         [pageSizeOptions]="[5, 10, 15, 20]"
+                         [showFirstLastButtons]="true"
+                         (page)="applyPagination($event)">
+          </mat-paginator>
+        </div>
+      </div>
+      <div class="row" *ngIf="products">
+        <div class="col-sm-4 pd-5px p-4" *ngFor="let product of products">
+          <mat-card class="example-card hoverable">
+            <a [routerLink]="['/product-listing/product-detail',product.id]" routerLinkActive="router-link-active">
+                <mat-card-header class="">
+                  <div mat-card-avatar class="example-header-image">
+                      <img src="{{product.firstImageData}}" alt="Photo of a Shiba Inu" style="height: 50px; width: 50px; border-radius: 50%;">
+                  </div>
+                  <mat-card-title style="color: darkblue;">{{product.name}}</mat-card-title>
+                  <mat-card-subtitle style="color: rgb(150, 37, 37); font-size: 16px ;"><b>{{product.categoryName}}</b>
+                  </mat-card-subtitle>
+                </mat-card-header>
+              </a>
+            <span class="p-2 image-center" align="center" style="vertical-align: middle;">
+              <a [routerLink]="['/product-listing/product-detail',product.id]" routerLinkActive="router-link-active">
+                <img mat-card-image src="{{product.firstImageData}}" alt="Photo of a Shiba Inu" class="image-center p-1" style="">
+              </a>
+           </span>
+
+            <mat-card-content>
+                <div class="col-sm-12 in-size"><h3 class="font-weight-bold center" style="color: rgb(40, 207, 40);">
+                  Rs.{{product.price}}</h3></div>
+                <!-- <div class="col-sm-6" style="text-align: right;"><label style="color: rgb(0, 167, 0); font-size: 20px;" class="font-weight-bold">42:05:36</label></div>Remaining Time -->
+                <!-- {{startDate | date:'medium'}}<br> -->
+                <!-- {{endDate | date:'medium'}} -->
+
+
+                <!-- <div class="col-sm-6" id="timer" style="text-align: right; color: rgb(0, 167, 0); font-size: 20px;"
+                     class="font-weight-bold" onload="timerCount()">
+                  <button onclick="timerCount()">timer</button>
+                  <span id="days"></span>days
+                  <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+                </div> -->
+
+            </mat-card-content>
+            <mat-card-actions class="">
+              <div class="example-button-row center">
+                <!-- <button type="button" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-unique rounded-pill"
+                        *ngIf="product.isLive">Bid Now
+                </button> -->
+                <button class="btn btn-unique rounded-pill" [routerLink]="['/product-listing/product-detail',product.id]"
+                        routerLinkActive="router-link-active"> Product Details
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <div class="row" *ngIf=" errorMessage && errorMessage.length > 0">
+        <div class="col-sm-12 pd-10px">
+          <li class="alert alert-warning"> {{errorMessage}}</li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bid -->
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal-content" style="background-color: rgb(187, 224, 245);">
+      <div class="modal-header" style="background-color: darksalmon;">
+        <h2 class="modal-title">Welcome! Bid Now</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="form-group">
+            <div class="center-align">
+              <button class="btn" type="button">Pay Base Price</button>
+            </div>
+            <br>
+            <label><h5>Enter Your Bidding Price</h5></label> &nbsp;
+            <mat-form-field appearance="fill">
+              <span matPrefix>₹&nbsp;</span>
+              <mat-label>Bid Price</mat-label>
+              <input matInput type="number" class="example-right-align">
+              <span matSuffix class="amount">.00</span>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="background-color: rgb(25, 25, 97);">
+        <button type="button" class="btn btn-unique">Bid Now</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-unique" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div> -->

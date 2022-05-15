@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+.font-size{
+  font-size: 15px;
+}
+
+
+.img-circle{
+  height: 150px;
+  width: 150px;
+}
+
+hr{
+  width: 100%;
+  size: 5px;
+}
+.darkblue{
+  color: darkblue;
+  font-style: initial;
+}
+.btn-width{
+  width: 90%;
+}
+table {
+  width: 100%;
+}
+
+.headding{
+  padding-top: 3%;
+  padding-bottom: 7%;
+}
+.btnbg{
+  background-color: rgb(150, 143, 143);
+}

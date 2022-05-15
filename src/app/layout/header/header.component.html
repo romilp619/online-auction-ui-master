@@ -1,0 +1,179 @@
+<!--
+<nav class=" navbar header-color unique-color-dark fixed-top navbar-light white scrolling-navbar" style="width:100%;">
+  <a class="navbar-brand" href="#">
+    <h1 class="left-padding"> Online-Auction</h1>
+  </a>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+    <button type="button" class="btn btn-outline-success btn-rounded waves-effect my-2 my-sm-0"><i class="fas fa-search pr-2"
+      aria-hidden="true"></i>Search</button>
+  </form>
+
+  <nav class="header-color unique-color-dark row" style="width: 100%;">
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a href="#" mat-button class="header-font-color">
+              <mat-icon matPrefix>home</mat-icon> Home <span class="sr-only">(current)</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active" mat-button class="header-font-color"> Auctions </a>
+        </li>
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a [routerLink]="['/post-product']" routerLinkActive="router-link-active" mat-button class="header-font-color"> Post Product </a>
+        </li>
+        <li class="nav-item">
+          <button mat-button [matMenuTriggerFor]="categories" class="header-font-color"> Categories </button>
+          <mat-menu #categories="matMenu">
+            <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active"><button
+                mat-menu-item>Antique</button></a>
+            <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active"><button
+                mat-menu-item>Art</button></a>
+            <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active"><button
+                mat-menu-item>Books</button></a>
+            <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active"><button
+                mat-menu-item>Coins</button></a>
+            <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active"><button
+                mat-menu-item>Electronics</button></a>
+            <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active"><button
+                mat-menu-item>Painting</button></a>
+            <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active"><button
+                mat-menu-item>Other</button></a>
+          </mat-menu>
+        </li>
+
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a [routerLink]="['/manage-product']" routerLinkActive="router-link-active" mat-button class="header-font-color"> Manage Product </a>
+        </li>
+
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a [routerLink]="['/profile']" routerLinkActive="router-link-active" mat-button class="header-font-color">Profile</a>
+        </li>
+
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a [routerLink]="['/cart']" routerLinkActive="router-link-active" mat-button class="header-font-color">Cart</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isUserLoggedIn">
+          <a [routerLink]="['/login']" routerLinkActive="router-link-active" mat-button class="header-font-color"> Login </a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isUserLoggedIn">
+          <a [routerLink]="['/register']" routerLinkActive="router-link-active"mat-button class="header-font-color">Register</a>
+        </li>
+
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a [routerLink]="['/logout']" routerLinkActive="router-link-active" mat-button class="header-font-color"> Logout </a>
+        </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/about-us']" routerLinkActive="router-link-active" mat-button class="header-font-color">About US </a>
+        </li>
+
+        <li class="nav-item">
+          <a [routerLink]="['/help']" routerLinkActive="router-link-active" mat-button class="header-font-color">
+              <mat-icon matPrefix> help</mat-icon> Help
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    </nav>
+  </nav>
+
+
+ -->
+
+
+
+
+
+
+
+
+<header>
+<nav class="navbar header-color unique-color-dark fixed-top navbar-light white scrolling-navbar" style="width:100%;">
+  <div class="container p-1">
+
+          <a class="navbar-brand pt-1" href="#">
+            <h1 style="color: rgb(0, 182, 0);">&nbsp; Online-Auction</h1>
+          </a>
+
+      <nav>
+        <form ngNativeValidate  class="form-inline my-2 my-lg-0" (submit)="search()">
+          <input class="form-control mr-sm-2" type="search" name="search"
+                 placeholder="Search..." aria-label="Search" [(ngModel)]="searchValue">
+
+          <button type="submit" class="btn btn-outline-success btn-rounded waves-effect my-2 my-sm-0"><i class="fas fa-search pr-2"
+            aria-hidden="true"></i>Search</button>
+        </form>
+      </nav>
+    </div>
+    <div class="container">
+        <nav class="" style="align-content: center; align-items: center; align-self: center;">
+                <span class="btn-group " role="group" style="text-align: center;align-items: center;">
+                      <a [routerLink]="['/home']" routerLinkActive="router-link-active" mat-button class="header-font-color ">
+                           Home <span class="sr-only">(current)</span>
+                      </a>
+
+
+                  <a [routerLink]="['/product-listing']" routerLinkActive="router-link-active" mat-button class="header-font-color "> Auctions </a>
+
+                  <a *ngIf="isUserLoggedIn" [routerLink]="['/post-product']" routerLinkActive="router-link-active" mat-button class="header-font-color "> Post Product</a>
+
+                  <a *ngIf="isUserLoggedIn && isAdmin" [routerLink]="['/manage-product']" routerLinkActive="router-link-active" mat-button class="header-font-color "> Manage Product </a>
+
+                  <!-- <a *ngIf="isUserLoggedIn" [routerLink]="['/profile']" routerLinkActive="router-link-active" mat-button class="header-font-color ">My Account</a> -->
+
+                  <!-- <a *ngIf="isUserLoggedIn" [routerLink]="['/orders']" routerLinkActive="router-link-active" mat-button class="header-font-color ">My Orders</a> -->
+
+                  <!-- <a *ngIf="isUserLoggedIn" [routerLink]="['/my-posted-products']" routerLinkActive="router-link-active" mat-button class="header-font-color ">My Products</a> -->
+
+                  <!-- <a *ngIf="isUserLoggedIn" [routerLink]="['/my-bids']" routerLinkActive="router-link-active" mat-button class="header-font-color ">My Bids</a> -->
+
+                  <!-- <a *ngIf="isUserLoggedIn" [routerLink]="['/cart']" routerLinkActive="router-link-active" mat-button class="header-font-color ">Cart</a> -->
+
+                  <a *ngIf="!isUserLoggedIn" [routerLink]="['/login']" routerLinkActive="router-link-active" mat-button class="header-font-color "> Login </a>
+
+                  <a *ngIf="!isUserLoggedIn" [routerLink]="['/register']" routerLinkActive="router-link-active"mat-button class="header-font-color ">Register</a>
+
+                  <a *ngIf="isUserLoggedIn" [routerLink]="['/profile']" routerLinkActive="router-link-active" mat-button class="header-font-color2">My Account</a>
+
+                  <!-- <a *ngIf="isUserLoggedIn" [routerLink]="['/logout']" routerLinkActive="router-link-active" mat-button class="header-font-color "> Logout </a> -->
+
+                  <a [routerLink]="['/about-us']" routerLinkActive="router-link-active" mat-button class="header-font-color ">About US </a>
+
+                  <a [routerLink]="['/help']" routerLinkActive="router-link-active" mat-button class="header-font-color  ">
+                           Help US</a>
+
+                  <a *ngIf="isUserLoggedIn" [routerLink]="['/cart']" routerLinkActive="router-link-active" mat-button class="header-font-color2 ">Cart</a>
+
+
+
+                           <nav>
+                            <div ngNativeValidate  class="form-inline my-2 my-lg-0">
+
+                  <a *ngIf="isUserLoggedIn" mat-button [matMenuTriggerFor]="me" class="header-font-color ">Account Options <i class="fas fa-angle-down"></i></a>
+                  <mat-menu #me="matMenu" yPosition="below" class="unique-color-dark">
+
+                      <a [routerLink]="['/orders']" routerLinkActive="router-link-active" mat-button class="header-font-color2 ">My Orders</a><br>
+
+                      <a [routerLink]="['/my-posted-products']" routerLinkActive="router-link-active" mat-button class="header-font-color2 ">My Products</a><br>
+
+                      <a [routerLink]="['/my-bids']" routerLinkActive="router-link-active" mat-button class="header-font-color2 ">My Bids</a>
+
+                    </mat-menu>
+
+                    <a *ngIf="isUserLoggedIn" [routerLink]="['/logout']" routerLinkActive="router-link-active" mat-button class="header-font-color2 "> Logout </a>
+
+
+                            </div>
+                          </nav>
+
+                </span>
+          </nav>
+      </div>
+</nav>
+</header>

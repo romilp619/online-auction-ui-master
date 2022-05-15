@@ -1,0 +1,38 @@
+.feed-form h5 {
+  margin: 10px;
+  text-align: center;
+}
+
+.feed-form{
+  width: 900px;
+  margin: 50px auto;
+}
+
+.feed-form form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  box-shadow: honeydew;
+}
+
+.fed-control{
+  min-height: 40px;
+  width: 350px;
+}
+
+.comment-control{
+  min-height: 50px;
+  width: 350px;
+}
+mat-icon{
+   margin-left: 250px;
+}
+.cmd-icon{
+  padding-bottom: 15%;
+  margin-bottom: 15%;
+}
+
+.top-padding{
+  padding-top: 123px;
+}

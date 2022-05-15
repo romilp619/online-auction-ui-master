@@ -1,0 +1,58 @@
+<div class="top-padding"></div>
+  <div class="signup-form">
+    <form ngNativeValidate (submit)="register()">
+      <h2>Sign Up</h2>
+      <p>Please fill in this form to create an account!</p>
+      <hr>
+      <div class="form-group">
+        <div class="input-group">
+          <mat-icon>account_circle</mat-icon>&nbsp;
+          <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Username"
+            required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <mat-icon>email</mat-icon>&nbsp;
+          <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Email Address"
+            required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <mat-icon matPrefix>lock</mat-icon> &nbsp;
+          <input class="form-control" name="password" [(ngModel)]="password" placeholder="Password" required
+            [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <mat-icon>lock</mat-icon> &nbsp;
+          <input class="form-control" name="confirm_password" [(ngModel)]="confirmPassword"
+            placeholder="Confirm Password" required="required" [type]="chide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="chide = !chide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="chide">
+            <mat-icon>{{chide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </div>
+      </div>
+      <!--<div class="form-group">
+        <label class="checkbox-inline"><input type="checkbox" name="userAgreement" required> I accept the <a
+            href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+      </div>-->
+      <div class="form-group">
+        <button type="submit" class="btn btn-drak btn-lg">Sign Up</button>
+        <button type="reset" class="btn btn-lg" style="background-color: grey;">Reset</button>
+      </div>
+      <div class="form-group"></div>
+      <li class="alert alert-success" *ngIf="successMessage"> {{successMessage}}, please login with registered credentials.</li>
+      <li class="alert alert-danger" *ngFor="let err of errorArray"> {{err}} </li>
+    </form>
+    <div class="text-center">Already have an account? <a href="#" [routerLink]="['/login']"
+        routerLinkActive="router-link-active" style="color: blue;">Login here</a></div>
+  </div>
+

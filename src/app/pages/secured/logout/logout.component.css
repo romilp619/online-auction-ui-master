@@ -1,0 +1,12 @@
+.logout {
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.top-padding{
+padding-top: 123px;
+}

@@ -1,0 +1,19 @@
+
+
+  .display-4
+  {
+      color:rgb(49, 56, 165);
+  }
+
+  .lead
+  {
+      color: red;
+  }
+  .top-padding{
+    padding-top: 123px;
+  }
+.cart-container{
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+}

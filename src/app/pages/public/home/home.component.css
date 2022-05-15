@@ -1,0 +1,247 @@
+.full-screen{
+width: 100%;
+width: 100%;
+}
+.carousel-margin{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+.carousel-padding{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+.home-background{
+  background-image: url(../../../../assets/home2.jpg);
+  padding-bottom: 3%;
+  padding-left: 14%;
+  margin-left: 0%;
+}
+.steps-background {
+  padding-bottom: 3%;
+  padding-right: 0;
+  padding-left: 12%;
+  margin-left: 0 ;
+  border-radius: 1.0rem auto;
+  background: rgb(245, 239, 211);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cycle{
+  padding-top: 3%;
+  background: rgb(245, 239, 211);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.step-layout{
+  background: white;
+  font-size: xx-large;
+  color:black;
+  width: 90px ;
+  height: 90px;
+  border: black;
+  border-style: solid;
+
+}
+.step-layout:hover{
+  background-color: #222;
+  color:white;
+}
+.center{
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.example-card {
+  max-width: 400px;
+  border: 1px solid #701811;
+  border-bottom: hidden;
+}
+
+.example-header-image-c {
+  /* background-image: url('../../../../assets/old_piece_1.jpg'); */
+  background-size: cover;
+}
+.example-header-image-up {
+  background-image: url('../../../../assets/Alea-Pinar-Du-Pre-celia-2-Ransom-Art-Gallery.jpg');
+  background-size: cover;
+}
+.example-header-image-p {
+  background-image: url('../../../../assets/highest_appraised_antique_items_in_world_breguet_sympathique_1280px_90a26d8db8164d87af6c3ac30a69c630.jpeg');
+  background-size: cover;
+}
+.home-img{
+  margin-top: 5%;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.live-auction{
+  max-width: 100%;
+  width:100%;
+  padding: 3%;
+  padding-bottom: 2%;
+  position: relative;
+}
+.all-auction-bg{
+  background-image: url('../../../../assets/bg-2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.fixed-bg-1{
+  background-image: url('../../../../assets/bg-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.fixed-bg-2{
+  background-image: url('../../../../assets/2771691.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+h2{
+  align-content: center;
+}
+.website-details{
+  padding: 2%;
+}
+.rules-font{
+  font-size: 18px auto;
+  padding-left: 7%;
+}
+.vertical-line{
+  border-bottom-left-radius: 0;
+  border-left-width: 5px;
+  border-left-color: rgb(190, 113, 50);
+  border-left-style: double;
+}
+.horizontal-line{
+  border-bottom-left-radius: 0;
+  border-top-width: 10px;
+  border-top-color: rgb(126, 9, 9);
+  border-top-style: double;
+}
+.bid-btn{
+  color: rgb(255, 255, 176);
+}
+.bid-btn:hover{
+  background-color: rgb(102, 84, 73);
+}
+.bid-btn::shadow{
+  background-color: rgb(150, 68, 13);
+}
+
+.amount{
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+}
+.full-width{
+  width: 100%;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+.card{
+  padding: 2%;
+}
+.mat-divider{
+  color:black;
+}
+.center-align{
+  text-align: center;
+}
+.top-padding{
+  padding-top: 123px ;
+}
+.imgRel{
+  color: rgb(166, 167, 199);
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  font-size: 43px;
+  font-size: auto;
+}
+.imgRel:hover{
+  color: rgb(185, 29, 29);
+}
+.darkblue{
+  color: darkblue;
+}
+
+
+
+.page-section {
+    width:100%;
+    margin:0px auto 0px auto;
+    overflow-x:hidden;
+}
+.font-white{
+    height:100%;
+    color: whitesmoke;
+}
+.font-black{
+ color: black
+}
+.process{
+  width: 94%;
+}
+.yellow-line{
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-top-width: 3px;
+  border-top-color: yellow;
+  border-top-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: yellow;
+  border-bottom-style: solid;
+}
+.image-center{
+  width: 100%;
+   height: 200px;
+}
+.screen{
+  width: 100%;
+  height: 480px;
+}
+.in-size:hover{
+  font-size: 30px;
+}
+.b2{
+  border: 1px solid #701811;
+  border-top: hidden;
+  border-radius: 1;
+}

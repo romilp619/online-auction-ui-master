@@ -1,0 +1,129 @@
+.header-color{
+  padding-top: 18px;
+  padding-bottom: 0%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 26.4px;
+}
+.color{
+  background-color: rgb(46, 40, 83);
+}
+
+h3 { font-family: Amaranth;
+     font-size: 14px;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 700;
+     line-height: 15.4px;
+    }
+
+    p { font-family: Amaranth;
+        font-size: 14px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 20px;
+
+     }
+
+     blockquote { font-family: Amaranth;
+        font-size: 21px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    pre { font-family: Amaranth;
+         font-size: 13px;
+         font-style: normal;
+         font-variant: normal;
+         font-weight: 400;
+         line-height: 18.5714px;
+        }
+.header-font-color{
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+}
+
+.sub-menu-font-size{
+  color: black;
+  font-size: medium;
+}
+.haeder-fix{
+  position: fixed;
+  height:auto;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+.left-padding{
+  padding-left: 40px;
+  color: rgb(0, 182, 0);
+}
+
+.header-font-color:hover{
+  color: rgb(56, 228, 56);
+  font-size: 18px;
+}
+
+.line{
+  border-left-color: whitesmoke;
+  border-left-style: solid;
+  border-left-width: 2px;
+}
+.line2{
+  border-right-color: whitesmoke;
+  border-right-style: solid;
+  border-right-width: 2px;
+}
+
+
+
+
+
+
+
+
+.intro-2 {
+  background: url("https://mdbootstrap.com/img/Photos/Others/img (42).jpg")no-repeat center center;
+  background-size: cover;
+}
+.view {
+  margin-top: -56px;
+}
+.navbar {
+  z-index: 1;
+  background-color: transparent;
+}
+.top-nav-collapse {
+  background-color: #4285F4;
+}
+@media only screen and (max-width: 768px) {
+  .navbar {
+      background-color: #4285F4;
+  }
+}
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+.header-font-color2{
+  font-size: 16px;
+  color: azure;
+
+}
+.header-font-color2:hover{
+  color: rgb(56, 228, 56);
+  font-size: 18px;
+}

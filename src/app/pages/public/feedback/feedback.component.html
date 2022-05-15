@@ -1,0 +1,91 @@
+<div class="top-padding"></div>
+<div class="container z-depth-1 my-5 px-0">
+
+  <!--Section: Content-->
+  <section class="my-md-5"
+           style="background-image: url('../../../../assets/feedback.jpg'); background-size: cover; background-position: center center;">
+
+    <div class="rgba-black-strong rounded p-5">
+
+      <!-- Section heading -->
+      <h3 class="text-center font-weight-bold text-white mt-3 mb-5">Feedback</h3>
+      <!-- <h5 class="font-weight-bold text-white mt-2 mb-2">Hi there!<br>
+        We'd love to hear more from our visitors.<br>
+        Your feedback will help us to understand what we do well and what not.
+    </h5> -->
+
+      <form ngNativeValidate class="mx-md-5" (submit)="sendFeedback()">
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+
+            <div class="card">
+              <div class="card-body px-4">
+
+                <!-- Name -->
+                <div class="md-form md-outline mt-0">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your Name"
+                         [(ngModel)]="name" required>
+                </div>
+
+                <div class="md-form md-outline mt-0">
+                  <input type="text" id="contact" name="contact" class="form-control" placeholder="Your Contact No"
+                         [(ngModel)]="contact">
+                </div>
+
+                <!-- Email -->
+                <div class="md-form md-outline">
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Your Email Address"
+                         [(ngModel)]="email" required>
+                </div>
+
+                <div class="md-form md-outline mt-0">
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject"
+                         [(ngModel)]="subject">
+                </div>
+
+                <!-- Message -->
+                <div class="md-form md-outline">
+                  <textarea id="message" name="message" class="md-textarea form-control" rows="3"
+                            placeholder="Your Message" [(ngModel)]="message"
+                            required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-md btn-block ml-0 mb-0">Submit</button>
+
+                <div class="md-form md-outline">
+                  <li class="alert alert-success" *ngIf="successMessage"> {{successMessage}}</li>
+                  <li class="alert alert-danger" *ngIf="errorMessage"> {{errorMessage}}</li>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-5 offset-md-1 mt-md-4 mb-4 white-text">
+
+            <h5 class="font-weight-bold">Address</h5>
+            <p class="mb-0">Opposite Karnavati Club, </p>
+            <p class="mb-0">Sarkhej - Gandhinagar Hwy,</p>
+            <p class="mb-0">Makarba, Ahmedabad,</p>
+            <p class="mb-4 pb-2">Gujarat 380015, India</p>
+
+            <h5 class="font-weight-bold">Phone No.</h5>
+            <p class="mb-4 pb-2">+ 97 778 956 89</p>
+
+            <h5 class="font-weight-bold">Email</h5>
+            <p>maheshkumarb086@gmail.com</p>
+
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+

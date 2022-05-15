@@ -1,0 +1,147 @@
+<div class="top-padding"></div>
+  <div class="container post-product-form">
+    <form ngNativeValidate class="product-content
+    " (submit)="updateProduct()">
+      <div class="row">
+        <div class="col-md-5">
+          <h5>Select Product : </h5>
+        </div>
+        <div class="col-md-6">
+          <input style="display: none" type="file" name="images" (change)="onFileChanged($event)" #fileInput multiple="multiple">
+          <button mat-button-toggle (click)="fileInput.click()">
+            <h6>Select Images</h6>
+          </button>
+          &nbsp;You can select up to 10 new images
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12 img-center" style="align-content: center;">
+          <label *ngFor="let url of urls" class="img-center"><img [src]="url" height="125"
+              width="200">&nbsp;&nbsp;&nbsp;</label>
+        </div>
+      </div>
+      <br>
+      <div class="row ">
+        <div class="img-center col-md-12 img-center" style="align-content: center;">
+          <h6>You have {{selectedImageCount}} images selected</h6>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h5 class="col-md-5">
+          Give Your Item Title :
+        </h5>
+        <div class="col-md-6">
+          <mat-form-field class="form-container">
+            <input matInput placeholder="Product Name" [(ngModel)]="productName" name="productName" required="required">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <h5 class="col-md-5">
+          Add product description :
+        </h5>
+        <div class="col-md-6">
+          <mat-form-field class="form-container">
+            <textarea matInput placeholder="Product Description" [(ngModel)]="productDescription" name="productDescription" required>
+              </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <hr>
+      <div class="row">
+        <h5 class="col-md-5">
+          Which Category of product ?
+        </h5>
+        <div class="col-md-6">
+          <mat-form-field>
+            <mat-select placeholder="Categories" [(ngModel)]="selectedCategory" name="categories" required>
+              <mat-option *ngFor="let category of categories" (onSelectionChange)="selectCategory(category)"
+                value="{{category.id}}">{{category.name}}</mat-option>
+              <!--<mat-option  value="antique">Antique</mat-option>
+                <mat-option value="art">Art</mat-option>
+                <mat-option value="books">Books</mat-option>
+                <mat-option value="coins">Coins</mat-option>
+                <mat-option value="electronics">Electronics</mat-option>
+                <mat-option value="painting">Painting</mat-option>
+                <mat-option value="others">Others</mat-option>-->
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h5 class="col-md-5">
+          Select starting date & time for auction :
+        </h5>
+        <div class="col-md-6">
+          <mat-form-field>
+            <input matInput [matDatepicker]="startDate" name="startDate" placeholder="Choose a date" class="alert-input date-input" [min]="validationStartDate"
+              (dateChange)="startDateChange($event)" required>
+            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+            <mat-datepicker #startDate></mat-datepicker>
+          </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <!-- <mat-form-field>
+            <input matInput [matDatepicker]="startDate" placeholder="Choose a date"
+              (dateChange)="startDateChange($event)" required onblur="startDateTime()" [(ngModel)]="date" min="startDateTime();">
+            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+            <mat-datepicker #startDate></mat-datepicker>
+          </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp; -->
+          <input type="time" id="startTime" name="startTime" [(ngModel)]="startTime" required>
+        </div>
+      </div>
+      <!-- <div class="col-md-6"><input [(ngModel)]="msg" name="msg"></div> -->
+      <hr>
+      <div class="row">
+        <h5 class="col-md-5">
+          Select Ending date & time for auction :
+        </h5>
+        <div class="col-md-6">
+          <mat-form-field>
+            <input matInput [matDatepicker]="endDate" name="endDate" placeholder="Choose a date" (dateChange)="endDateChange($event)"
+            [min]="validationStartDate" [max]="" required>
+            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+            <mat-datepicker #endDate></mat-datepicker>
+          </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="time" id="endTime" name="endTime" [(ngModel)]="endTime" required>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h5 class="col-md-5">
+          Enter base price of the product :
+        </h5>
+        <div class="col-md-6">
+          <mat-form-field>
+            <input matInput placeholder="Amount" type="number" name="price" class="example-right-align" min="1"
+              [(ngModel)]="price" required>
+            <span matPrefix>₹&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <!--<a [routerLink]="['/product-listing/product-detail']" routerLinkActive="router-link-active"> </a>-->
+          <button type="submit" mat-button class="header-font-color bg-grey">Submit</button>
+          <button type="reset" mat-button class="header-font-color bg-grey">Reset</button>
+          <!-- <input mat-button-toggle type="submit" value="Submit"> -->
+        </div>
+      </div>
+      <div class="col-md-12">
+        <li class="alert alert-success" *ngIf="successMessage"> {{successMessage}}</li>
+        <li class="alert alert-danger" *ngFor="let err of errorArray"> {{err}} </li>
+      </div>
+    </form>
+  </div>
+<!--
+    <p>Today is {{today | date}}</p>
+    <p>Or if you prefer, {{today | date:'fullDate'}}</p>
+    <p>The time is {{today | date:'h:mm a z'}}</p> -->
+<!-- {{validationEndDate}} -->
